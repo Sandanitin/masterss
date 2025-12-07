@@ -8,16 +8,36 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#f3faf6',
-          100: '#e6f6ee',
-          200: '#c3ecd7',
-          300: '#8fddb7',
-          400: '#5dcb97',
-          500: '#3bb273',
-          600: '#2e8c59',
-          700: '#256b45',
-          800: '#1b4b31',
-          900: '#13341f',
+          purple: '#6B46C1',
+          blue: '#3B82F6',
+        },
+        accent: {
+          orange: '#F59E0B',
+          yellow: '#FBBF24',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(135deg, #6B46C1 0%, #3B82F6 100%)',
+        'gradient-accent': 'linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%)',
+        'gradient-hero': 'linear-gradient(135deg, rgba(107, 70, 193, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%)',
+      },
+      animation: {
+        'fade-in-up': 'fadeInUp 0.6s ease-out',
+        'float': 'float 3s ease-in-out infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
         },
       },
     },
@@ -25,4 +45,4 @@ export default {
   plugins: [
     require('@tailwindcss/forms'),
   ],
-} 
+}
