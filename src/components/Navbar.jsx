@@ -65,7 +65,7 @@ const Navbar = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <div className="container mx-auto px-4 md:px-6 py-3 md:py-6">
+                <div className="container mx-auto px-4 md:px-6 py-2 md:py-4">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <motion.div
@@ -75,11 +75,11 @@ const Navbar = () => {
                         >
                             <div className="relative">
                                 {/* Professional highlight effect */}
-                                <div className="bg-white rounded-xl md:rounded-2xl p-2 md:p-3 shadow-lg border-2 border-yellow-400 hover:border-orange-400 transition-all">
+                                <div className="bg-white rounded-lg md:rounded-xl p-1.5 md:p-2 shadow-lg border-2 border-yellow-400 hover:border-orange-400 transition-all">
                                     <img
                                         src="/assets/MM Logo-3.png"
                                         alt="Memory Masters Logo"
-                                        className="h-12 md:h-16 w-auto object-contain"
+                                        className="h-10 md:h-14 w-auto object-contain"
                                     />
                                 </div>
                             </div>
