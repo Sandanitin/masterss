@@ -17,11 +17,13 @@ import TermsConditions from './components/TermsConditions';
 import RefundPolicy from './components/RefundPolicy';
 import Shipping from './components/Shipping';
 import FixedCTA from './components/FixedCTA';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
       <Toaster position="bottom-right" />
+      <ScrollToTop />
       <FixedCTA />
       <Routes>
         <Route

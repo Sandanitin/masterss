@@ -177,7 +177,7 @@ const About = () => {
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
                                     whileHover={{ y: -10 }}
-                                    className="group"
+                                    className="group relative"
                                 >
                                     <div className={`absolute -inset-1 bg-gradient-to-r ${value.gradient} rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity`} />
                                     <div className="relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-gray-100">

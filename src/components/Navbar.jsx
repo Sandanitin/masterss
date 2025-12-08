@@ -63,7 +63,7 @@ const Navbar = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <div className="container mx-auto px-6 py-4">
+                <div className="container mx-auto px-6 py-6">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <motion.div
@@ -75,16 +75,8 @@ const Navbar = () => {
                                 <img
                                     src="/assets/MM Logo-3.png"
                                     alt="Memory Masters Logo"
-                                    className="h-16 w-auto object-contain"
+                                    className="h-20 w-auto object-contain"
                                 />
-                            </div>
-                            <div className="hidden sm:block">
-                                <span className={`text-xl font-heading font-bold ${isScrolled
-                                    ? 'bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent'
-                                    : 'text-white'
-                                    }`}>
-
-                                </span>
                             </div>
                         </motion.div>
 
@@ -94,15 +86,21 @@ const Navbar = () => {
                                 <motion.button
                                     key={link.id || link.label}
                                     onClick={() => handleNavigation(link)}
-                                    className={`px-4 py-2 rounded-lg font-medium transition-all relative group ${isScrolled
-                                        ? 'text-gray-700 hover:text-purple-600'
-                                        : 'text-white/80 hover:text-white'
+                                    className={`px-4 py-2 rounded-lg font-medium transition-all relative group ${link.label === 'Workshop'
+                                            ? isScrolled
+                                                ? 'bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-bold shadow-md'
+                                                : 'bg-white/20 backdrop-blur-sm text-white font-bold'
+                                            : isScrolled
+                                                ? 'text-gray-700 hover:text-purple-600'
+                                                : 'text-white/80 hover:text-white'
                                         }`}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     {link.label}
-                                    <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 group-hover:w-3/4 transition-all duration-300 rounded-full`} />
+                                    {link.label !== 'Workshop' && (
+                                        <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 group-hover:w-3/4 transition-all duration-300 rounded-full`} />
+                                    )}
                                 </motion.button>
                             ))}
                         </div>
@@ -110,12 +108,12 @@ const Navbar = () => {
                         {/* CTA Button */}
                         <div className="flex items-center gap-4">
                             <motion.button
-                                className="hidden md:flex items-center gap-2 relative overflow-hidden bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-orange-500/30"
+                                className="hidden md:flex items-center gap-2 relative overflow-hidden bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-orange-500/30 text-lg"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <span className="relative z-10">Register Now</span>
-                                <span className="relative z-10 bg-white/20 px-2 py-0.5 rounded text-sm">₹99</span>
+                                <span className="relative z-10 bg-white/20 px-3 py-1 rounded text-base">₹99</span>
                                 <motion.div
                                     className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400"
                                     animate={{ x: ['-100%', '100%'] }}
