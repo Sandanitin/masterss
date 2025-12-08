@@ -75,7 +75,7 @@ const Navbar = () => {
                                 <img
                                     src="/logo.jpg"
                                     alt="Memory Masters Logo"
-                                    className="h-12 w-auto object-contain"
+                                    className="h-16 w-auto object-contain"
                                 />
                             </div>
                             <div className="hidden sm:block">

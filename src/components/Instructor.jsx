@@ -72,9 +72,9 @@ const Instructor = () => {
                             {/* Image Container */}
                             <div className="relative bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl overflow-hidden shadow-2xl">
                                 <img
-                                    src="/assets/instructor-kishore-kaki.png"
+                                    src="/image.png"
                                     alt="Kishore Kaki - Founder & Lead Trainer"
-                                    className="w-full h-[500px] object-cover object-top"
+                                    className="w-full h-[500px] object-contain object-center"
                                 />
 
                                 {/* Overlay Gradient */}
