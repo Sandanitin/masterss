@@ -3,9 +3,8 @@ import { motion } from 'framer-motion';
 
 const Instructor = () => {
     const credentials = [
-        { icon: '🎓', value: '1,00,000+', label: 'Students Helped' },
-        { icon: '⏱️', value: '4,500+', label: 'Hours Training' },
-        { icon: '🏆', value: 'MU Rank', label: 'Holder' },
+        { icon: '🎓', value: '1000+', label: 'Students Helped' },
+        { icon: '⏱️', value: '500+', label: 'Hours Training' },
         { icon: '📚', value: '20 Books', label: 'in 45 Days' }
     ];
 

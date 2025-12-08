@@ -209,7 +209,7 @@ const ABCMemory = () => {
                     {/* Trust Badges */}
                     <div className="flex flex-wrap justify-center gap-6 mt-8">
                         <div className="flex items-center gap-2 text-white/60 text-sm">
-                            <span className="text-green-400">✓</span> 100K+ Students
+                            <span className="text-green-400">✓</span> 1000+ Students
                         </div>
                         <div className="flex items-center gap-2 text-white/60 text-sm">
                             <span className="text-green-400">✓</span> Live Training

@@ -63,7 +63,7 @@ const FixedCTA = () => {
                                     Ready to Transform Your Memory?
                                 </h3>
                                 <p className="text-white/90 text-xs md:text-sm lg:text-base hidden sm:block">
-                                    Join 100,000+ students who have already improved their academic performance
+                                    Join 1000+ students who have already improved their academic performance
                                 </p>
                             </div>
 
@@ -76,7 +76,7 @@ const FixedCTA = () => {
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     <span className="relative z-10 flex items-center gap-1 md:gap-2 text-sm md:text-base lg:text-lg">
-                                        🚀 Register @ ₹99
+                                        🚀 Register @ ₹699
                                     </span>
                                     <motion.div
                                         className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400"

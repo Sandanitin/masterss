@@ -145,7 +145,7 @@ const Hero = () => {
                             className="text-base md:text-lg text-white/80 mb-6 font-medium max-w-xl mx-auto lg:mx-0"
                         >
                             Empowering students with scientifically-backed memory strategies. Transform the way you approach textbooks, exams, and lifelong knowledge.
-                            Join <span className="text-yellow-400 font-bold">100,000+</span> Students Who Transformed Their Academic Performance.
+                            Join <span className="text-yellow-400 font-bold">1000+</span> Students Who Transformed Their Academic Performance.
                         </motion.p>
 
                         {/* Animated Benefits Cards */}

@@ -73,7 +73,7 @@ const Footer = () => {
                                 Ready to Transform Your Memory?
                             </h3>
                             <p className="text-white/80">
-                                Join 100,000+ students who have already improved their academic performance
+                                Join 1000+ students who have already improved their academic performance
                             </p>
                         </div>
                         <motion.button
@@ -82,7 +82,7 @@ const Footer = () => {
                             whileTap={{ scale: 0.95 }}
                         >
                             <span className="relative z-10 flex items-center gap-2">
-                                🚀 Register Now @ ₹99
+                                🚀 Register Now @ ₹699
                             </span>
                             <motion.div
                                 className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400"

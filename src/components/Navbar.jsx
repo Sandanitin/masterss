@@ -119,7 +119,7 @@ const Navbar = () => {
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <span className="relative z-10">Register Now</span>
-                                <span className="relative z-10 bg-white/20 px-2 md:px-3 py-0.5 md:py-1 rounded text-sm md:text-base">₹99</span>
+                                <span className="relative z-10 bg-white/20 px-2 md:px-3 py-0.5 md:py-1 rounded text-sm md:text-base">₹699</span>
                                 <motion.div
                                     className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400"
                                     animate={{ x: ['-100%', '100%'] }}
@@ -218,7 +218,7 @@ const Navbar = () => {
                                         whileTap={{ scale: 0.98 }}
                                     >
                                         <span className="relative z-10 flex items-center justify-center gap-2">
-                                            🚀 Register Now @ ₹99
+                                            🚀 Register Now @ ₹699
                                         </span>
                                     </motion.button>
                                 </div>

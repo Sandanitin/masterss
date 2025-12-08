@@ -21,8 +21,8 @@ const Benefits = () => {
 
     const features = [
         { icon: '💡', title: 'Memory, Study Skills', subtitle: '& Concentration', gradient: 'from-purple-500 to-indigo-500' },
-        { icon: '👥', title: '1.25L+ Students', subtitle: 'Benefitted', gradient: 'from-blue-500 to-cyan-500' },
-        { icon: '⏱️', title: '2 HOURS', subtitle: 'Online Training', gradient: 'from-orange-500 to-yellow-500' },
+        { icon: '👥', title: '1000+ Students', subtitle: 'Benefitted', gradient: 'from-blue-500 to-cyan-500' },
+        { icon: '⏱️', title: '10 HOURS', subtitle: 'Online Training', gradient: 'from-orange-500 to-yellow-500' },
         { icon: '🛠️', title: 'PRACTICAL', subtitle: 'Tools & Techniques', gradient: 'from-green-500 to-emerald-500' }
     ];
 
@@ -174,7 +174,7 @@ const Benefits = () => {
                             >
                                 <span className="relative z-10 flex items-center justify-center gap-3">
                                     <span className="text-2xl">🎟️</span>
-                                    Buy Now @ <span className="line-through opacity-70">₹999</span> ₹99/-
+                                    Buy Now @ <span className="line-through opacity-70">₹999</span> ₹699/-
                                 </span>
                                 <motion.div
                                     className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400"

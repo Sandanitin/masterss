@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Stats = () => {
     const stats = [
         {
-            number: '100,000+',
+            number: '1000+',
             label: 'Participants Mastered',
             description: 'the process of Remembering and Recalling faster',
             icon: '👥',
