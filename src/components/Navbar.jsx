@@ -65,7 +65,7 @@ const Navbar = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <div className="container mx-auto px-6 py-6">
+                <div className="container mx-auto px-4 md:px-6 py-3 md:py-6">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <motion.div
@@ -75,11 +75,11 @@ const Navbar = () => {
                         >
                             <div className="relative">
                                 {/* Professional highlight effect */}
-                                <div className="bg-white rounded-2xl p-3 shadow-lg border-2 border-yellow-400 hover:border-orange-400 transition-all">
+                                <div className="bg-white rounded-xl md:rounded-2xl p-2 md:p-3 shadow-lg border-2 border-yellow-400 hover:border-orange-400 transition-all">
                                     <img
                                         src="/assets/MM Logo-3.png"
                                         alt="Memory Masters Logo"
-                                        className="h-20 w-auto object-contain"
+                                        className="h-12 md:h-16 w-auto object-contain"
                                     />
                                 </div>
                             </div>
@@ -111,15 +111,15 @@ const Navbar = () => {
                         </div>
 
                         {/* CTA Button */}
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2 md:gap-4">
                             <motion.button
                                 onClick={() => setIsRegistrationOpen(true)}
-                                className="hidden md:flex items-center gap-2 relative overflow-hidden bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-orange-500/30 text-lg"
+                                className="hidden md:flex items-center gap-2 relative overflow-hidden bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl shadow-lg shadow-orange-500/30 text-base md:text-lg"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <span className="relative z-10">Register Now</span>
-                                <span className="relative z-10 bg-white/20 px-3 py-1 rounded text-base">₹99</span>
+                                <span className="relative z-10 bg-white/20 px-2 md:px-3 py-0.5 md:py-1 rounded text-sm md:text-base">₹99</span>
                                 <motion.div
                                     className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400"
                                     animate={{ x: ['-100%', '100%'] }}
@@ -210,6 +210,10 @@ const Navbar = () => {
 
                                 <div className="mt-6 pt-6 border-t border-gray-100">
                                     <motion.button
+                                        onClick={() => {
+                                            setIsRegistrationOpen(true);
+                                            setIsMobileMenuOpen(false);
+                                        }}
                                         className="w-full relative overflow-hidden bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 text-white font-bold py-4 rounded-xl shadow-lg text-lg"
                                         whileTap={{ scale: 0.98 }}
                                     >

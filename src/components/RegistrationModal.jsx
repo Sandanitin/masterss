@@ -95,184 +95,182 @@ const RegistrationModal = ({ isOpen, onClose }) => {
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Header */}
-                            <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 p-6 rounded-t-2xl relative">
+                            <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 p-4 rounded-t-2xl relative sticky top-0 z-10">
                                 <button
                                     onClick={onClose}
-                                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+                                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
                                 >
                                     ✕
                                 </button>
-                                <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2">
+                                <h2 className="text-xl md:text-2xl font-heading font-bold text-white mb-1">
                                     Super Memory Master BASIC
                                 </h2>
-                                <div className="flex items-center gap-2 text-white/90">
-                                    <span className="text-sm">🔒 Secure Checkout</span>
+                                <div className="flex items-center gap-2 text-white/90 text-sm">
+                                    <span>🔒 Secure Checkout</span>
                                 </div>
                             </div>
 
                             {/* Content */}
-                            <div className="p-6 md:p-8">
-                                <div className="grid md:grid-cols-3 gap-8">
-                                    {/* Form Section */}
-                                    <div className="md:col-span-2">
-                                        <h3 className="text-xl font-heading font-bold text-gray-900 mb-6">
-                                            Customer Information
-                                        </h3>
+                            <div className="p-6">
+                                {/* Form Section */}
+                                <div>
+                                    <h3 className="text-lg font-heading font-bold text-gray-900 mb-4">
+                                        Customer Information
+                                    </h3>
 
-                                        <form onSubmit={handleSubmit} className="space-y-4">
-                                            {/* Name Fields */}
-                                            <div className="grid grid-cols-2 gap-4">
-                                                <div>
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                        First Name<span className="text-red-500">*</span>
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        name="firstName"
-                                                        value={formData.firstName}
-                                                        onChange={handleChange}
-                                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                                                        required
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                        Last Name<span className="text-red-500">*</span>
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        name="lastName"
-                                                        value={formData.lastName}
-                                                        onChange={handleChange}
-                                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                                                        required
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            {/* Email */}
+                                    <form onSubmit={handleSubmit} className="space-y-4">
+                                        {/* Name Fields */}
+                                        <div className="grid grid-cols-2 gap-4">
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                    Email ID<span className="text-red-500">*</span>
-                                                </label>
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    value={formData.email}
-                                                    onChange={handleChange}
-                                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                                                    required
-                                                />
-                                            </div>
-
-                                            {/* Mobile */}
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                    Mobile No.<span className="text-red-500">*</span>
-                                                </label>
-                                                <div className="flex gap-2">
-                                                    <div className="flex items-center gap-2 px-3 py-3 bg-gray-50 border border-gray-300 rounded-lg">
-                                                        🇮🇳 <span className="text-sm">+91</span>
-                                                    </div>
-                                                    <input
-                                                        type="tel"
-                                                        name="mobile"
-                                                        value={formData.mobile}
-                                                        onChange={handleChange}
-                                                        placeholder="10-digit mobile number"
-                                                        maxLength="10"
-                                                        className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                                                        required
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            {/* Standard */}
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                    Standard<span className="text-red-500">*</span>
-                                                </label>
-                                                <div className="space-y-2">
-                                                    {standards.map((standard) => (
-                                                        <label key={standard} className="flex items-center gap-3 cursor-pointer">
-                                                            <input
-                                                                type="radio"
-                                                                name="standard"
-                                                                value={standard}
-                                                                checked={formData.standard === standard}
-                                                                onChange={handleChange}
-                                                                className="w-4 h-4 text-purple-600 focus:ring-purple-500"
-                                                            />
-                                                            <span className="text-gray-700">{standard}</span>
-                                                        </label>
-                                                    ))}
-                                                </div>
-                                            </div>
-
-                                            {/* City */}
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                    City<span className="text-red-500">*</span>
+                                                    First Name<span className="text-red-500">*</span>
                                                 </label>
                                                 <input
                                                     type="text"
-                                                    name="city"
-                                                    value={formData.city}
+                                                    name="firstName"
+                                                    value={formData.firstName}
                                                     onChange={handleChange}
                                                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
                                                     required
                                                 />
                                             </div>
-
-                                            {/* Submit Button */}
-                                            <div className="flex gap-4 pt-4">
-                                                <button
-                                                    type="button"
-                                                    onClick={onClose}
-                                                    className="px-6 py-3 rounded-lg border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
-                                                >
-                                                    ← Back
-                                                </button>
-                                                <button
-                                                    type="submit"
-                                                    className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg"
-                                                >
-                                                    Proceed to pay
-                                                </button>
+                                            <div>
+                                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                                    Last Name<span className="text-red-500">*</span>
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    name="lastName"
+                                                    value={formData.lastName}
+                                                    onChange={handleChange}
+                                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                                                    required
+                                                />
                                             </div>
-                                        </form>
-                                    </div>
+                                        </div>
 
-                                    {/* Order Summary */}
-                                    <div className="md:col-span-1">
-                                        <div className="bg-gray-50 rounded-xl p-6 sticky top-4">
-                                            <h3 className="text-lg font-heading font-bold text-gray-900 mb-4">
-                                                Order Summary for{' '}
-                                                <span className="text-purple-600">Super Memory Master [Basic]</span>
-                                            </h3>
+                                        {/* Email */}
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                                Email ID<span className="text-red-500">*</span>
+                                            </label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                                                required
+                                            />
+                                        </div>
 
-                                            <div className="space-y-3 mb-6">
-                                                <div className="flex justify-between text-gray-700">
-                                                    <span>Subtotal (1 item)</span>
-                                                    <span>₹ 99.00</span>
+                                        {/* Mobile */}
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                                Mobile No.<span className="text-red-500">*</span>
+                                            </label>
+                                            <div className="flex gap-2">
+                                                <div className="flex items-center gap-2 px-3 py-3 bg-gray-50 border border-gray-300 rounded-lg">
+                                                    🇮🇳 <span className="text-sm">+91</span>
                                                 </div>
+                                                <input
+                                                    type="tel"
+                                                    name="mobile"
+                                                    value={formData.mobile}
+                                                    onChange={handleChange}
+                                                    placeholder="10-digit mobile number"
+                                                    maxLength="10"
+                                                    className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                                                    required
+                                                />
                                             </div>
+                                        </div>
 
-                                            <div className="border-t pt-4">
-                                                <div className="flex justify-between text-xl font-bold text-gray-900">
-                                                    <span>Order Total</span>
-                                                    <span>₹ 99.00</span>
-                                                </div>
+                                        {/* Standard */}
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                                Standard<span className="text-red-500">*</span>
+                                            </label>
+                                            <div className="space-y-2">
+                                                {standards.map((standard) => (
+                                                    <label key={standard} className="flex items-center gap-3 cursor-pointer">
+                                                        <input
+                                                            type="radio"
+                                                            name="standard"
+                                                            value={standard}
+                                                            checked={formData.standard === standard}
+                                                            onChange={handleChange}
+                                                            className="w-4 h-4 text-purple-600 focus:ring-purple-500"
+                                                        />
+                                                        <span className="text-gray-700">{standard}</span>
+                                                    </label>
+                                                ))}
                                             </div>
+                                        </div>
 
-                                            <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
-                                                <p className="text-sm text-green-800">
-                                                    ✓ Instant access to workshop materials
-                                                </p>
-                                                <p className="text-sm text-green-800 mt-2">
-                                                    ✓ Lifetime access to recordings
-                                                </p>
+                                        {/* City */}
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                                City<span className="text-red-500">*</span>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="city"
+                                                value={formData.city}
+                                                onChange={handleChange}
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                                                required
+                                            />
+                                        </div>
+
+                                        {/* Submit Button */}
+                                        <div className="flex gap-4 pt-4">
+                                            <button
+                                                type="button"
+                                                onClick={onClose}
+                                                className="px-6 py-3 rounded-lg border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+                                            >
+                                                ← Back
+                                            </button>
+                                            <button
+                                                type="submit"
+                                                className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg"
+                                            >
+                                                Proceed to pay
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                {/* Order Summary */}
+                                <div className="md:col-span-1">
+                                    <div className="bg-gray-50 rounded-xl p-6 sticky top-4">
+                                        <h3 className="text-lg font-heading font-bold text-gray-900 mb-4">
+                                            Order Summary for{' '}
+                                            <span className="text-purple-600">Super Memory Master [Basic]</span>
+                                        </h3>
+
+                                        <div className="space-y-3 mb-6">
+                                            <div className="flex justify-between text-gray-700">
+                                                <span>Subtotal (1 item)</span>
+                                                <span>₹ 99.00</span>
                                             </div>
+                                        </div>
+
+                                        <div className="border-t pt-4">
+                                            <div className="flex justify-between text-xl font-bold text-gray-900">
+                                                <span>Order Total</span>
+                                                <span>₹ 99.00</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                                            <p className="text-sm text-green-800">
+                                                ✓ Instant access to workshop materials
+                                            </p>
+                                            <p className="text-sm text-green-800 mt-2">
+                                                ✓ Lifetime access to recordings
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
