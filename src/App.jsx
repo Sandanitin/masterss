@@ -24,13 +24,13 @@ function App() {
     <div className="App">
       <Toaster position="bottom-right" />
       <ScrollToTop />
+      <Navbar />
       <FixedCTA />
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Navbar />
               <Hero />
               <Stats />
               <Services />
@@ -39,7 +39,6 @@ function App() {
               <ABCMemory />
               <Instructor />
               <FAQ />
-              <Footer />
             </>
           }
         />
@@ -49,6 +48,7 @@ function App() {
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/shipping" element={<Shipping />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

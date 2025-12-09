@@ -24,6 +24,10 @@ const Navbar = () => {
         if (link.to) {
             // Navigate to route
             navigate(link.to);
+            // Scroll to top when navigating to home
+            if (link.to === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         } else if (link.id) {
             // If we're not on home page, go home first
             if (location.pathname !== '/') {
@@ -71,7 +75,10 @@ const Navbar = () => {
                         <motion.div
                             className="flex items-center gap-3 cursor-pointer"
                             whileHover={{ scale: 1.05 }}
-                            onClick={() => navigate('/')}
+                            onClick={() => {
+                                navigate('/');
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }}
                         >
                             <div className="relative">
                                 {/* Professional highlight effect */}
