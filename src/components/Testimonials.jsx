@@ -11,7 +11,7 @@ const Testimonials = () => {
             role: 'Board Exam Topper - 92%',
             avatar: '👩‍🎓',
             color: 'from-purple-500 to-indigo-500',
-            text: 'I have always struggled with my studies. It took me long hours to grasp even the easiest of concepts. My 10th boards were nearing and I had no idea how I would pass. Then, my mom enrolled me for Super Memory Master workshop and that was the breakthrough I needed. With the techniques taught in the workshop and Kimi Mam\'s constant guidance, I secured an unbelievable 92% marks in my board exams!',
+            text: 'I have always struggled with my studies. It took me long hours to grasp even the easiest of concepts. My 10th boards were nearing and I had no idea how I would pass. Then, my mom enrolled me for Memory Master workshop and that was the breakthrough I needed. With the techniques taught in the workshop and Kimi Mam\'s constant guidance, I secured an unbelievable 92% marks in my board exams!',
             rating: 5,
             highlight: '92% in Boards'
         },
@@ -29,7 +29,7 @@ const Testimonials = () => {
             role: 'College Student',
             avatar: '👨‍🎓',
             color: 'from-emerald-500 to-teal-500',
-            text: 'After completing the Super Memory Master Series, I can now speed-read and retain my answers faster. I have also observed a significant improvement in my weekly college tests. Thank you Kimi Mam and team for such an amazing course.',
+            text: 'After completing the Memory Master Series, I can now speed-read and retain my answers faster. I have also observed a significant improvement in my weekly college tests. Thank you Kimi Mam and team for such an amazing course.',
             rating: 5,
             highlight: 'Speed Reading'
         },
@@ -228,8 +228,8 @@ const Testimonials = () => {
                                         setCurrentIndex(index);
                                     }}
                                     className={`transition-all duration-500 rounded-full ${index === currentIndex
-                                            ? 'w-10 h-3 bg-gradient-to-r from-yellow-400 to-orange-400'
-                                            : 'w-3 h-3 bg-white/30 hover:bg-white/50'
+                                        ? 'w-10 h-3 bg-gradient-to-r from-yellow-400 to-orange-400'
+                                        : 'w-3 h-3 bg-white/30 hover:bg-white/50'
                                         }`}
                                     whileHover={{ scale: 1.2 }}
                                 />
@@ -269,8 +269,8 @@ const Testimonials = () => {
                                 setCurrentIndex(index);
                             }}
                             className={`group relative p-4 rounded-xl transition-all duration-300 ${index === currentIndex
-                                    ? 'bg-white/20 border-2 border-white/40'
-                                    : 'bg-white/5 border border-white/10 hover:bg-white/10'
+                                ? 'bg-white/20 border-2 border-white/40'
+                                : 'bg-white/5 border border-white/10 hover:bg-white/10'
                                 }`}
                             whileHover={{ y: -5 }}
                         >

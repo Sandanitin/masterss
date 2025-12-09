@@ -91,7 +91,7 @@ const Navbar = () => {
                                 <motion.button
                                     key={link.id || link.label}
                                     onClick={() => handleNavigation(link)}
-                                    className={`px-4 py-2 rounded-lg font-medium transition-all relative group ${link.label === 'Workshop'
+                                    className={`px-4 py-2 rounded-lg font-medium text-sm transition-all relative group ${link.label === 'Workshop'
                                         ? isScrolled
                                             ? 'bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-bold shadow-md'
                                             : 'bg-white/20 backdrop-blur-sm text-white font-bold'

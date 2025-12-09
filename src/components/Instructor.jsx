@@ -11,7 +11,7 @@ const Instructor = () => {
     const trainingPoints = [
         {
             icon: '🧠',
-            title: 'Two Foundations of Super Memory',
+            title: 'Two Foundations of Memory',
             description: 'that you can Adapt to your Studies instantly'
         },
         {

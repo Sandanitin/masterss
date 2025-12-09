@@ -103,7 +103,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
                                     ✕
                                 </button>
                                 <h2 className="text-xl md:text-2xl font-heading font-bold text-white mb-1">
-                                    Super Memory Master BASIC
+                                    Memory Master BASIC
                                 </h2>
                                 <div className="flex items-center gap-2 text-white/90 text-sm">
                                     <span>🔒 Secure Checkout</span>
@@ -247,7 +247,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
                                     <div className="bg-gray-50 rounded-xl p-6 sticky top-4">
                                         <h3 className="text-lg font-heading font-bold text-gray-900 mb-4">
                                             Order Summary for{' '}
-                                            <span className="text-purple-600">Super Memory Master [Basic]</span>
+                                            <span className="text-purple-600">Memory Master [Basic]</span>
                                         </h3>
 
                                         <div className="space-y-3 mb-6">

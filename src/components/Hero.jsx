@@ -123,15 +123,15 @@ const Hero = () => {
                             className="mb-6"
                         >
                             <h1 className="text-3xl md:text-5xl font-heading font-black text-white leading-tight tracking-tight">
-                                <span className="relative">
-                                    <span className="relative z-10 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                                        SUPER
+                                <span className="relative inline-block">
+                                    <span className="relative z-10 text-white drop-shadow-lg">
+                                        MEMORY
                                     </span>
                                 </span>
                                 <br />
                                 <span className="relative inline-block mt-2">
-                                    <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-orange-400 to-yellow-300 bg-clip-text text-transparent drop-shadow-lg">
-                                        MEMORY MASTER
+                                    <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-orange-400 to-yellow-300 bg-clip-text text-transparent drop-shadow-lg text-5xl md:text-7xl">
+                                        MASTER
                                     </span>
                                     <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 blur-2xl opacity-30" />
                                 </span>
@@ -189,7 +189,7 @@ const Hero = () => {
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <span className="relative z-10 flex items-center justify-center gap-2">
-                                    🚀 Register Now for Super Memory Master
+                                    🚀 Register Now for Memory Master
                                 </span>
                                 <motion.div
                                     className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400"
@@ -283,7 +283,7 @@ const Hero = () => {
                             <div className="flex items-center gap-2">
                                 <span className="text-2xl">🎓</span>
                                 <div>
-                                    <p className="text-lg font-black text-gray-900">100K+</p>
+                                    <p className="text-lg font-black text-gray-900">1K+</p>
                                     <p className="text-xs text-gray-500">Students</p>
                                 </div>
                             </div>
@@ -335,7 +335,7 @@ const Hero = () => {
                     className="lg:hidden flex flex-wrap justify-center gap-6 mt-12 text-white"
                 >
                     {[
-                        { value: '100K+', label: 'Students', icon: '🎓' },
+                        { value: '1K+', label: 'Students', icon: '🎓' },
                         { value: '47%', label: 'Focus Boost', icon: '📈' },
                         { value: '100+', label: 'Toppers', icon: '🏆' }
                     ].map((stat, index) => (
