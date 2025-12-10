@@ -39,17 +39,27 @@ export const saveToGoogleSheets = async (paymentData) => {
             })
         };
 
-        // Send data to Google Apps Script
-        const response = await axios.post(GOOGLE_SHEETS_URL, sheetData, {
+        // Send data to Google Apps Script using fetch with text/plain to avoid CORS preflight
+        // Google Apps Script doesn't handle OPTIONS requests well, so we use a simple request
+        const response = await fetch(GOOGLE_SHEETS_URL, {
+            method: 'POST',
+            body: JSON.stringify(sheetData),
             headers: {
-                'Content-Type': 'application/json'
-            }
+                // strict-origin-when-cross-origin is default, but we treat body as text to avoid preflight
+                'Content-Type': 'text/plain;charset=utf-8',
+            },
         });
 
-        console.log('Payment data saved to Google Sheets successfully:', response.data);
-        return { success: true, response: response.data };
+        // With Google Apps Script, we might get an opaque response if using no-cors,
+        // but since we are sending text/plain, we should get a proper CORS response if the script is "Anyone"
+        const result = await response.json();
+
+        console.log('Payment data saved to Google Sheets successfully:', result);
+        return { success: true, response: result };
     } catch (error) {
         console.error('Error saving to Google Sheets:', error);
+        // Even if it fails (e.g. CORS), we often don't want to block the user flow
+        // throwing is okay if caught upstream, which it is.
         throw error;
     }
 };
