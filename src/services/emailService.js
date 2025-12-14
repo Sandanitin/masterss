@@ -1,17 +1,5 @@
-import emailjs from '@emailjs/browser';
-
-// Initialize EmailJS with your public key
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-
-// Initialize EmailJS
-if (EMAILJS_PUBLIC_KEY) {
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-}
-
 /**
- * Send payment receipt email to customer
+ * Send payment receipt email to customer using backend Nodemailer API
  * @param {Object} paymentData - Payment details
  * @param {string} paymentData.customerName - Customer's full name
  * @param {string} paymentData.customerEmail - Customer's email
@@ -20,65 +8,45 @@ if (EMAILJS_PUBLIC_KEY) {
  * @param {number} paymentData.amount - Payment amount
  * @param {string} paymentData.standard - Student's standard/grade
  * @param {string} paymentData.city - Customer's city
- * @returns {Promise} EmailJS response
+ * @returns {Promise} API response
  */
 export const sendPaymentReceipt = async (paymentData) => {
     try {
-        // Check if EmailJS is configured
-        if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-            console.warn('EmailJS not configured. Skipping email send.');
-            console.warn('Service ID:', EMAILJS_SERVICE_ID);
-            console.warn('Template ID:', EMAILJS_TEMPLATE_ID);
-            console.warn('Public Key:', EMAILJS_PUBLIC_KEY ? 'Present' : 'Missing');
-            return { success: false, message: 'EmailJS not configured' };
-        }
+        const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
 
-        console.log('Sending email with EmailJS...');
-        console.log('Service ID:', EMAILJS_SERVICE_ID);
-        console.log('Template ID:', EMAILJS_TEMPLATE_ID);
+        console.log('📧 Sending email via backend API...');
+        console.log('Backend URL:', backendUrl);
+        console.log('Recipient:', paymentData.customerEmail);
 
-        // Format the date
-        const transactionDate = new Date().toLocaleString('en-IN', {
-            dateStyle: 'full',
-            timeStyle: 'short',
-            timeZone: 'Asia/Kolkata'
+        // Send request to backend API
+        const response = await fetch(`${backendUrl}/api/send-payment-receipt`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                customerName: paymentData.customerName,
+                customerEmail: paymentData.customerEmail,
+                customerMobile: paymentData.customerMobile,
+                paymentId: paymentData.paymentId,
+                amount: paymentData.amount,
+                standard: paymentData.standard,
+                city: paymentData.city,
+            }),
         });
 
-        // Prepare template parameters for EmailJS
-        // Using reply_to for recipient email (required by EmailJS)
-        const templateParams = {
-            reply_to: paymentData.customerEmail,  // Recipient email (CRITICAL for EmailJS)
-            to_name: paymentData.customerName,
-            from_name: 'Memory MASTERS',
-            // Customer details for HTML template
-            customer_name: paymentData.customerName,
-            customer_email: paymentData.customerEmail,
-            customer_mobile: paymentData.customerMobile,
-            standard: paymentData.standard,
-            city: paymentData.city,
-            payment_id: paymentData.paymentId,
-            amount: paymentData.amount,
-            transaction_date: transactionDate
-        };
+        const result = await response.json();
 
-        console.log('Sending email to:', paymentData.customerEmail);
-        console.log('Template ID:', EMAILJS_TEMPLATE_ID);
+        if (!response.ok) {
+            throw new Error(result.message || 'Failed to send email');
+        }
 
-        // Send email using EmailJS
-        const response = await emailjs.send(
-            EMAILJS_SERVICE_ID,
-            EMAILJS_TEMPLATE_ID,
-            templateParams
-        );
-
-        console.log('✅ Payment receipt email sent successfully:', response);
-        return { success: true, response };
+        console.log('✅ Payment receipt email sent successfully:', result);
+        return { success: true, response: result };
     } catch (error) {
         console.error('❌ Error sending payment receipt email:', error);
         console.error('Error details:', {
             message: error.message,
-            text: error.text,
-            status: error.status
         });
         throw error;
     }
