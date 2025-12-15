@@ -102,7 +102,7 @@ const About = () => {
                                             <h3 className="text-2xl font-heading font-bold text-white">
                                                 Kishore Kaki
                                             </h3>
-                                            <p className="text-white/90">Founder & Lead Trainer</p>
+                                            <p className="text-white/90">Memory Trainer, Speed reading & Study skills coach</p>
                                         </div>
                                     </div>
                                 </motion.div>
