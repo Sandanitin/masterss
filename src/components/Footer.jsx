@@ -219,7 +219,7 @@ const Footer = () => {
                     </div>
 
                     {/* Bottom Bar */}
-                    <div className="border-t border-gray-800 pt-8 pb-8">
+                    <div className="border-t border-gray-800 pt-8">
                         <div className="flex flex-col md:flex-row items-center justify-center gap-2">
                             <p className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-200">
                                 <span>© 2025 Memory MASTERS. All rights reserved.</span>

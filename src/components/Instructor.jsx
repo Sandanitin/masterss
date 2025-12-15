@@ -72,7 +72,7 @@ const Instructor = () => {
                             <div className="relative bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl overflow-hidden shadow-2xl">
                                 <img
                                     src="/image.png"
-                                    alt="Kishore Kaki - Memory Trainer, Speed reading & Study skills coach"
+                                    alt="Kishore Kaki - Founder & Lead Trainer"
                                     className="w-full h-[500px] object-contain object-center"
                                 />
 
@@ -91,7 +91,7 @@ const Instructor = () => {
                                             KISHORE KAKI
                                         </h3>
                                         <p className="text-white/90 font-medium">
-                                            Memory Trainer, Speed reading & Study skills coach
+                                            Founder & Lead Trainer
                                         </p>
                                     </motion.div>
                                 </div>
@@ -183,7 +183,7 @@ const Instructor = () => {
                                 </motion.button>
 
                                 <p className="text-center text-sm text-gray-500 mt-4">
-                                    Memory Trainer, Speed reading & Study skills coach • Memory Transformation Expert
+                                    Founder & Lead Trainer • Memory Transformation Expert
                                 </p>
                             </div>
                         </div>

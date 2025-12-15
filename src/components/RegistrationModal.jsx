@@ -150,8 +150,6 @@ const RegistrationModal = ({ isOpen, onClose }) => {
     };
 
     const standards = [
-        'Student',
-        'Institute',
         'Grade 1st - 7th',
         'Grade 8th - 10th',
         'Junior College',
